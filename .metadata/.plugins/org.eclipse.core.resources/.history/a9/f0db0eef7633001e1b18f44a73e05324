@@ -1,0 +1,32 @@
+package com.brainmentors.chatapp.network;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
+/*
+ Thread == worker
+ Worker need a job to perform
+ For a job , u give a runnable 
+ Once job is created via Runnable so write the job logic inside a run function
+ Assign the job to a Thread/worker
+  
+*/
+	public class ServerWorker extends Thread{
+		private Socket clientSocket;
+		private InputStream in;
+		private OutputStream out;
+		public ServerWorker(Socket clientSocket) throws IOException {
+			this.clientSocket = clientSocket;
+			in = clientSocket.getInputStream(); //Client Data Read
+			out = clientSocket.getOutputStream(); // Client Data Write
+		}
+		
+		@Override
+		public void run() {
+			
+		}
+
+
+}
